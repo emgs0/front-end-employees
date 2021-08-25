@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-employee-list',
@@ -34,6 +35,7 @@ export class EmployeeListComponent implements OnInit {
       console.log(data);
       this.getEmployees();
     });
+    swal.fire('Eliminado','exitosamente','error');
   }
 
   detailsEmployee(id:number){
